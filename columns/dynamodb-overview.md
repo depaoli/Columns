@@ -140,6 +140,7 @@ More tips on [this guideline](https://aws.amazon.com/blogs/aws/optimizing-provis
 In DynamoDB **there is no hierarchy**; no concepts of multiple databases inside the same instance like in MySQL, or folders or anything like that.
 From your AWS account you can create just tables, organised by AWS Regions (ie. you can have multiple tables named 'Foo' in different Regions and they're totally independent, but only one 'Foo' table for each Region would be allowed), but there is no way to set up a folder/database for a specific customer in order to put all its tables in it; anyway, with the powerful API of DynamoDB you can easily implement an automated way to create multiple tables for every customer, for instance:
 
+    :::python
     from boto.dynamodb2 import connect_to_region
     from boto.dynamodb2.table import Table
 
@@ -166,6 +167,7 @@ In this test table we can see that items have independent attributes; for instan
 
 Looking at the items, the JSON representation for the 2nd element is:
 
+    :::json
     {
       "city": {
         "S": "Cordenons"
