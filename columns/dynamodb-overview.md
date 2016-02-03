@@ -39,7 +39,7 @@ It's a **fully managed database service**, and you just need to design your tabl
 
 So, why NoSQL? Is SQL bad? Why do we need NoSQL after many years of great results with SQL?
 
-![SQL vs. NoSQL](http://2.bp.blogspot.com/-0M-UnzLH40k/VjisOe7HdII/AAAAAAAALjo/XMNTbvq5Xug/s320/sqlvsno.jpg)
+![SQL vs. NoSQL](http://2.bp.blogspot.com/-0M-UnzLH40k/VjisOe7HdII/AAAAAAAALjo/XMNTbvq5Xug/s320/sqlvsno.jpg){: .center-block style="width: 50%;"}
 
 In a brief: because **NoSQL DB are lighter and simpler, meaning great scalability, fast performance and lower cost.**
 
@@ -99,7 +99,7 @@ You have **only one Primary Key**, and **you can access an item only by its Prim
 
 **Index is sorted and partitioned in multiple chunks, based on ranges of the primary key**.
 
-![DynamoDB Table](http://www.allthingsdistributed.com/images/gsi1.png)
+![DynamoDB Table](http://www.allthingsdistributed.com/images/gsi1.png){: .center-block style="width: 80%;"}
 ***(Image courtesy of http://www.allthingsdistributed.com/2013/12/dynamodb-global-secondary-indexes.html)***
 
 This way, when asking for a key, it's possible to know in which partition the key will be (if it exists).
@@ -161,7 +161,7 @@ Now, let's expand "The characteristics" section above, starting by listing the m
 
 This is an example of a DynamoDB table named "test":
 
-![DynamoDB Table Example](http://1.bp.blogspot.com/-tAtyyX1iE2k/VjiefNzeL4I/AAAAAAAALjY/Q0Ao9ActhRg/s640/Table%2Bexample.png)
+![DynamoDB Table Example](http://1.bp.blogspot.com/-tAtyyX1iE2k/VjiefNzeL4I/AAAAAAAALjY/Q0Ao9ActhRg/s640/Table%2Bexample.png){: .center-block style="width: 100%;"}
 
 In this test table we can see that items have independent attributes; for instance, the item '03' has no attributes 'name' and  'surname'.
 
