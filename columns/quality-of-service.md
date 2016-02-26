@@ -7,7 +7,8 @@ tag: [bandwidth, cbwfq, cisco, congestion, dscp, lfi, llq, networking, phb, poli
 headline: Overview of QoS, from TCP synchronization and fragmentation issues to IPSEC and the DSCP byte preservation feature, through LLQ, WRED, NBAR and other important technologies.
 image: 
 lead: This column is to give an overview of the QoS (Quality of Service) techniques that can be used on an IP network in order to provide "Congestion management" and to optimize "Congestion avoidance".
-...
+
+---
 
 ##Abstract
 
@@ -15,8 +16,7 @@ lead: This column is to give an overview of the QoS (Quality of Service) techniq
 
 >**NOTE**: Other than [DSCP](http://en.wikipedia.org/wiki/Differentiated_services_code_point), there are many technologies to obtain QoS, like [CoS](http://en.wikipedia.org/wiki/Class_of_service) for Ethernet and [CBR/VBR/etc.](http://en.wikipedia.org/wiki/Traffic_contract) in ATM networks.
 
-**Congestion** happens when a router receive more traffic than what it can send (ie. when the bandwidth is not enough). This is a common situation on WAN interfaces, where the speed of the LAN interface/s is much higher than the WAN speed.
-
+**Congestion** happens when a router receive more traffic than what it can send (ie. when the bandwidth is not enough). This is a common situation on WAN interfaces, where the speed of the LAN interface/s is much higher than the WAN speed.  
 When there is a congestion on an interface of a router, the packets are serialized in buffers called queues where they wait for their turn before going into the wire (causing an increasing of the latency). When the queues are full, the packets are discarded (usually, by default, with [Tail-Drop](http://en.wikipedia.org/wiki/Tail_drop)).
 
 In TCP connections/[VC](http://en.wikipedia.org/wiki/Virtual_circuit#Examples_of_protocols_that_provide_virtual_circuits) (where [ACK](http://en.wikipedia.org/wiki/Transmission_Control_Protocol#Reliable_transmission) are used), when the queue grows and the latency increases, TCP notices the delay of the [ACK](http://en.wikipedia.org/wiki/Transmission_Control_Protocol#Reliable_transmission) it receives, and consequently it slows down the connection a bit.
@@ -39,13 +39,16 @@ To optimize the bandwidth utilization and to grant the proper bandwidth and late
 - Fixed
     - Processing/Forwarding: the time used by router to process a packet and to apply things like encryption and compression ([enterprise class routers with proper capacity to process the required traffic in real time should be used](http://www.cisco.com/web/partners/downloads/765/tools/quickreference/routerperformance.pdf)).
     - **Serialization**: the time a router spends to put bits on the [media (ie. wire)](http://en.wikipedia.org/wiki/Transmission_medium), defined by interface speed and frame size.
-    >*Serialization Delay (ms) = Frame size (Bytes) \*8 / bandwidth (kbps)*
-    -
-     **Huge frames mean higher latency at the same bandwidth**, because the single frame needs more time to be completely sent.
-          This delay do not impact the frame itself only, but if the Serialization delay is too long it could result in service degradation for the others high priority packets that must wait in the queue.
-     [Link Fragmentation and Interleaving (LFI)](http://docwiki.cisco.com/wiki/Quality_of_Service_Networking#Link_Efficiency_Mechanisms) could help if this is the case, by fragmenting packets to a smaller size and by interchange fragment of different packets (allowing QoS to prioritise traffic better). Anyway, the **further fragmentation means more overhead** (more headers for same payload), so it shouldn't be abused. In modern network we can avoid this, but it’s suggested where bandwidth is under 1Mbps.
-     ![Frame Serialization](http://3.bp.blogspot.com/-cwMYb5o0DGo/VXmLnzm-DWI/AAAAAAAALas/6Pk2fmZNqAc/s1600/frame%2Bserialization.jpg)
+    
+    	<code>Serialization Delay (ms) = Frame size (Bytes) \*8 / bandwidth (kbps)</code>
+    
+	    **Huge frames mean higher latency at the same bandwidth**, because the single frame needs more time to be completely sent.
+	          This delay do not impact the frame itself only, but if the Serialization delay is too long it could result in service degradation for the others high priority packets that must wait in the queue.
+	     [Link Fragmentation and Interleaving (LFI)](http://docwiki.cisco.com/wiki/Quality_of_Service_Networking#Link_Efficiency_Mechanisms) could help if this is the case, by fragmenting packets to a smaller size and by interchange fragment of different packets (allowing QoS to prioritise traffic better). Anyway, the **further fragmentation means more overhead** (more headers for same payload), so it shouldn't be abused. In modern network we can avoid this, but it’s suggested where bandwidth is under 1Mbps.
+	     ![Frame Serialization](http://3.bp.blogspot.com/-cwMYb5o0DGo/VXmLnzm-DWI/AAAAAAAALas/6Pk2fmZNqAc/s1600/frame%2Bserialization.jpg)
+     
     - Propagation: the time required for the energy pulse (electrical/optical/waves/etc.) to traverse the [media](http://en.wikipedia.org/wiki/Transmission_medium) from source to destination, influenced mostly by the length of the link.
+
 - Variable
     - **Queuing**: the time the packet stay in the router output queue waiting for its turn.
 
