@@ -5,7 +5,7 @@ published: 2014-08-08
 updated: 2014-08-08
 tag: [bandwidth, cbwfq, cisco, congestion, dscp, lfi, llq, networking, phb, policing, pq, priority, qos, queue, red, shaping, tail-drop, wfq, wred]
 headline: Overview of QoS, from TCP synchronization and fragmentation issues to IPSEC and the DSCP byte preservation feature, through LLQ, WRED, NBAR and other important technologies.
-image: 
+image: http://goo.gl/dCIS2a
 lead: This column is to give an overview of the QoS (Quality of Service) techniques that can be used on an IP network in order to provide "Congestion management" and to optimize "Congestion avoidance".
 
 ---
