@@ -4,7 +4,7 @@ author: Matteo De Paoli
 published: 2013-05-20
 updated: 2013-05-20
 tag: [bios, cpl, cpu, exception, gdt, idt, int, interrupt, isr, ivt, ldt, mmu, register, rings, syscall, tlb, uefi, virtualization, x86]
-headline: 
+headline: Overview of the hardware and software technologies that grant security and reliability to x86 family systems
 image: http://4.bp.blogspot.com/-HVpgea7zK3A/VlyBbRRc7QI/AAAAAAAALkw/507bLnmC4kA/s1600/rings.png
 lead: Nowadays, our OS runs multiple programs at the same time, and even multiple (virtual) machines may run atop of it. With a so huge sharing of the physical resources, why the code of the Nginx service that runs on an Ubuntu virtual machine inside our VMware ESXi host doesn't mess up with the resources of other services? After all, what does limit a generic machine code "injected" in the CPU to control whatever it wants and run arbitrary stuff? What does "user space" actually means? It's the CPU and OS duo that, with the help of MMU, manages this paramount mechanism! This column will cover the basics around x86 technologies that permits segmentation of the machine resources used by the applications running into our boxes, from MMU up to the OS user space concepts.
 

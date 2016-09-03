@@ -4,7 +4,7 @@ author: Matteo De Paoli
 published: 2015-08-24
 updated: 2015-08-24
 tag: [amazon, amzn, aws, cloud, database, dbms, dynamo, dynamodb, hash, hash and range, index, innodb, no-sql, nosql, primary key, secondary key, ssd]
-headline: 
+headline: Overview of one of the most important NoSQL Cloud Based Database, analysing distinctive traits, pros and cons
 image: https://goo.gl/IRTsmL
 lead: This is just a small overview for the users who want to start using DynamoDB and who need to figure out the overall picture. Particularly, we'll look at it under the hood, in order to understand how the provisioned throughput (ie. "Capacity Units") must be evaluated, and the consequent performance of the different requests that can be performed against DynamoDB. We'll also give an overview of the features that can be expected by this NoSQL, key-value storage system.
 
